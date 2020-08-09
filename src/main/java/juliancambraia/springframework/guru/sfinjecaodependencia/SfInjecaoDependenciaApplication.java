@@ -1,6 +1,7 @@
 package juliancambraia.springframework.guru.sfinjecaodependencia;
 
 import juliancambraia.springframework.guru.sfinjecaodependencia.controller.ConstrutorInjecaoController;
+import juliancambraia.springframework.guru.sfinjecaodependencia.controller.I18NController;
 import juliancambraia.springframework.guru.sfinjecaodependencia.controller.MeuController;
 import juliancambraia.springframework.guru.sfinjecaodependencia.controller.PropriedadeInjecaoController;
 import juliancambraia.springframework.guru.sfinjecaodependencia.controller.SetaInjecaoController;
@@ -15,6 +16,12 @@ public class SfInjecaoDependenciaApplication {
 		ApplicationContext ctx = SpringApplication.run(SfInjecaoDependenciaApplication.class, args);
 
 		System.out.println("--------------------------------------------------");
+
+		System.out.println("--------------------P R O F I L E S------------------------------");
+		I18NController i18NController = (I18NController) ctx.getBean("i18NController");
+		System.out.println(i18NController.saudarEmVariosIdiomas());
+		System.out.println("--------------------------------------------------");
+
 		MeuController meuController = (MeuController) ctx.getBean("meuController");
 		System.out.println(meuController.digaOlaMundo());
 		System.out.println("--------------------------------------------------");
