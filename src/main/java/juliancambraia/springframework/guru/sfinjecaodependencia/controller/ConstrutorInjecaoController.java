@@ -13,6 +13,6 @@ public class ConstrutorInjecaoController {
     }
 
     public String saudarComContstrutor() {
-        return saudacaoService.saudar();
+        return saudacaoService.saudar("por Contstrutor");
     }
 }

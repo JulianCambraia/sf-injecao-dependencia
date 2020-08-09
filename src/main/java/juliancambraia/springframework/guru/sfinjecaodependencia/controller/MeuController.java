@@ -13,7 +13,7 @@ public class MeuController {
     }
 
     public String digaOlaMundo() {
-        System.out.println(saudacaoService.saudar());
+        System.out.println(saudacaoService.saudar("modelo Inicial"));
         return "Tudo funcionando!!!";
     }
 }

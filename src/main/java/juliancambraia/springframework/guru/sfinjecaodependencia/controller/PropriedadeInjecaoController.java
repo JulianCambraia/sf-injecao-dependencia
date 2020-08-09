@@ -11,6 +11,6 @@ public class PropriedadeInjecaoController {
     public SaudacaoService saudacaoService;
 
     public String getSaudar() {
-        return saudacaoService.saudar();
+        return saudacaoService.saudar("por Property");
     }
 }

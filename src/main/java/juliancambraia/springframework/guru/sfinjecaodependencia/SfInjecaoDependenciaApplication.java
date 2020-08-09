@@ -1,5 +1,6 @@
 package juliancambraia.springframework.guru.sfinjecaodependencia;
 
+import juliancambraia.springframework.guru.sfinjecaodependencia.controller.ConstrutorInjecaoController;
 import juliancambraia.springframework.guru.sfinjecaodependencia.controller.MeuController;
 import juliancambraia.springframework.guru.sfinjecaodependencia.controller.PropriedadeInjecaoController;
 import juliancambraia.springframework.guru.sfinjecaodependencia.controller.SetaInjecaoController;
@@ -14,14 +15,22 @@ public class SfInjecaoDependenciaApplication {
 		ApplicationContext ctx = SpringApplication.run(SfInjecaoDependenciaApplication.class, args);
 		MeuController meuController = (MeuController) ctx.getBean("meuController");
 		System.out.println(meuController.digaOlaMundo());
+		System.out.println("--------------------------------------------------");
 
-		System.out.println("Abordagem péssima - Uso de Property para Inject Dependency e IOc");
+		System.out.println("Péssima abordagem - Uso de Property para Inject Dependency e IOc");
 		PropriedadeInjecaoController propriedadeInjecaoController = (PropriedadeInjecaoController) ctx.getBean("propriedadeInjecaoController");
 		System.out.println(propriedadeInjecaoController.getSaudar());
+		System.out.println("--------------------------------------------------");
 
-		System.out.println("Má ruim - Uso de Setter para Inject Dependency e IOc");
+		System.out.println("Abordagem ruim - Uso de Setter para Inject Dependency e IOc");
 		SetaInjecaoController setaInjecaoController = (SetaInjecaoController) ctx.getBean("setaInjecaoController");
 		System.out.println(setaInjecaoController.saudarComSetter());
+		System.out.println("--------------------------------------------------");
+
+		System.out.println("Abordagem Correta - Uso de Construtor para Inject Dependency e IOc");
+		ConstrutorInjecaoController construtorInjecaoController = (ConstrutorInjecaoController) ctx.getBean("construtorInjecaoController");
+		System.out.println(construtorInjecaoController.saudarComContstrutor());
+		System.out.println("--------------------------------------------------");
 	}
 
 }

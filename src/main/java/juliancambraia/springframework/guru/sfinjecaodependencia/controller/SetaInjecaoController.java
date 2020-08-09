@@ -15,6 +15,6 @@ public class SetaInjecaoController {
     }
 
     public String saudarComSetter() {
-        return saudacaoService.saudar();
+        return saudacaoService.saudar("por Setter");
     }
 }

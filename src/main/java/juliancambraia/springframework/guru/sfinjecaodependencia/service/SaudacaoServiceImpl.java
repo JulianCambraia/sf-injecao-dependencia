@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class SaudacaoServiceImpl implements SaudacaoService {
 
     @Override
-    public String saudar() {
-        return "Olá Mundo Spring Framework - IOc e Injeção de Dependência";
+    public String saudar(String metodo) {
+        return "Olá Mundo Spring Framework - IOc e Injeção de Dependência: " + metodo;
     }
 }
