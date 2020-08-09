@@ -13,6 +13,8 @@ public class SfInjecaoDependenciaApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfInjecaoDependenciaApplication.class, args);
+
+		System.out.println("--------------------------------------------------");
 		MeuController meuController = (MeuController) ctx.getBean("meuController");
 		System.out.println(meuController.digaOlaMundo());
 		System.out.println("--------------------------------------------------");

@@ -1,6 +1,6 @@
 package juliancambraia.springframework.guru.sfinjecaodependencia.controller;
 
-import juliancambraia.springframework.guru.sfinjecaodependencia.service.SaudacaoServiceImpl;
+import juliancambraia.springframework.guru.sfinjecaodependencia.service.GenericoSaudacaoServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ class SetaInjecaoControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetaInjecaoController();
-        controller.setSaudacaoService(new SaudacaoServiceImpl());
+        controller.setSaudacaoService(new GenericoSaudacaoServiceImpl());
     }
 
     @Test

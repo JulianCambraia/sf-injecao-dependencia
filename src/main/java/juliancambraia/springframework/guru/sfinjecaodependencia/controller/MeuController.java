@@ -6,14 +6,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MeuController {
 
-    SaudacaoService saudacaoService;
+    private final SaudacaoService saudacaoService;
 
     public MeuController(SaudacaoService saudacaoService) {
         this.saudacaoService = saudacaoService;
     }
 
     public String digaOlaMundo() {
-        System.out.println(saudacaoService.saudar("modelo Inicial"));
-        return "Tudo funcionando!!!";
+        return saudacaoService.saudar();
     }
 }
