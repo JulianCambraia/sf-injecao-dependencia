@@ -1,4 +1,4 @@
-package juliancambraia.springframework.guru.sfinjecaodependencia;
+package juliancambraia.springframework;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
