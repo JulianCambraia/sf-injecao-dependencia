@@ -1,8 +1,7 @@
 package juliancambraia.springframework;
 
-import juliancambraia.springframework.guru.controller.ConstructorInjectController;
+import juliancambraia.springframework.examplebeans.FakeDataSource;
 import juliancambraia.springframework.guru.controller.MyController;
-import juliancambraia.springframework.guru.controller.PropertyInjectController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,20 +17,9 @@ public class SfInjecaoDependenciaApplication {
         System.out.println("--------------------------------------------------");
 
         MyController myController = (MyController) ctx.getBean("myController");
-        System.out.println(myController.hello());
-        System.out.println("--------------------------------------------------");
 
-        System.out.println("Péssima abordagem - Uso de Property para Inject Dependency e IOc");
-        System.out.println(ctx.getBean(PropertyInjectController.class).sayHello());
-        System.out.println("--------------------------------------------------");
-
-        System.out.println("Abordagem ruim - Uso de Setter para Inject Dependency e IOc");
-        System.out.println(ctx.getBean(PropertyInjectController.class).sayHello());
-        System.out.println("--------------------------------------------------");
-
-        System.out.println("Abordagem Correta - Uso de Construtor para Inject Dependency e IOc");
-        System.out.println(ctx.getBean(ConstructorInjectController.class).sayHello());
-        System.out.println("--------------------------------------------------");
+        System.out.println("---------------Injetando no Contexto do Spring as Propriedades Externas------------------");
+        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
     }
 
 }
