@@ -1,0 +1,44 @@
+# isto é um comentário YAML que será ignorado
+
+name: Julian Fernando
+
+# Criando uma matriz de nomes com 2 espaços
+names: #Comentários
+  - John
+  - Paul
+  - Ringo
+
+pound_sign: "#"
+
+#criando um objeto com 2 propriedades
+book:
+  author: Joe Buck
+  publisher: random
+
+# criando booleanos
+
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no #No, false, FALSE
+
+string_val: "Esta é uma string com scape Caixa D'água"
+
+colon_string: "my coureses: one two tree"
+
+include_new_lines: |
+  asdf  asdf  asdf
+  asdf  asdf  adsf
+  asdf  asdf  asdf
+
+ignore_new_lines: >
+  Esta é somente
+  uma linha
+  muito
+  muito
+  longa
+  de
+  texto
