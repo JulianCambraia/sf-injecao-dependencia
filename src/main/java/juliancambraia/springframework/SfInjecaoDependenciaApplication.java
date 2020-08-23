@@ -1,6 +1,7 @@
 package juliancambraia.springframework;
 
 import juliancambraia.springframework.examplebeans.FakeDataSource;
+import juliancambraia.springframework.guru.config.FakeJmsBroker;
 import juliancambraia.springframework.guru.controller.MyController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,16 +12,19 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {"juliancambraia.springframework.guru.services", "juliancambraia.springframework"})
 public class SfInjecaoDependenciaApplication {
 
-	public static void main(String[] args) {
-        ApplicationContext ctx = SpringApplication.run(SfInjecaoDependenciaApplication.class, args);
+        public static void main(String[] args) {
+                ApplicationContext ctx = SpringApplication.run(SfInjecaoDependenciaApplication.class, args);
 
-        System.out.println("--------------------------------------------------");
+                System.out.println("--------------------------------------------------");
 
-        MyController myController = (MyController) ctx.getBean("myController");
+                MyController myController = (MyController) ctx.getBean("myController");
 
-        System.out.println("---------------Injetando no Contexto do Spring as Propriedades Externas------------------");
-        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
-        System.out.println(fakeDataSource.getUsername());
-    }
+                System.out.println("---------------Injetando no Contexto do Spring as Propriedades Externas------------------");
+                FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+                System.out.println(fakeDataSource.getUsername());
+
+                FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+                System.out.println(fakeJmsBroker.getUsername());
+        }
 
 }
