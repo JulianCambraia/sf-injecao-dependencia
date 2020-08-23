@@ -20,6 +20,7 @@ public class SfInjecaoDependenciaApplication {
 
         System.out.println("---------------Injetando no Contexto do Spring as Propriedades Externas------------------");
         FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+        System.out.println(fakeDataSource.getUsername());
     }
 
 }
